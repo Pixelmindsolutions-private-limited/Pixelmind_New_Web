@@ -259,9 +259,13 @@ export default function Home() {
 
             <h1 className="max-w-full text-[clamp(2.2rem,8.5vw,4.2rem)] font-semibold leading-[.98] tracking-[-.065em] text-white sm:text-[clamp(3rem,5.8vw,4.8rem)] lg:text-[clamp(2.4rem,min(4.1vw,6.5vh),4.3rem)]">
               <span className="block">Software built for</span>
-              <span className="block bg-gradient-to-r from-cyan-200 via-teal-300 to-teal-200 bg-clip-text text-transparent">growth.</span>
+              <span className="block bg-gradient-to-r from-cyan-200 via-teal-300 to-teal-200 bg-clip-text text-transparent">
+                growth.
+              </span>
               <span className="block">Engineering built for</span>
-              <span className="block bg-gradient-to-r from-cyan-200 via-teal-300 to-teal-200 bg-clip-text text-transparent">scale.</span>
+              <span className="block bg-gradient-to-r from-cyan-200 via-teal-300 to-teal-200 bg-clip-text text-transparent">
+                scale.
+              </span>
             </h1>
 
             <p className="mt-5 max-w-xl text-[clamp(.95rem,1.15vw,1.1rem)] leading-[1.65] text-white/65 sm:mt-6 sm:leading-[1.7] lg:mt-5">
@@ -313,22 +317,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200/80 bg-[#f0f9f8] py-[clamp(1.25rem,3vw,2rem)]">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 sm:px-8">
-          <p className="max-w-xs text-xs font-semibold leading-5 text-slate-500">
-            A connected team for your next digital milestone.
-          </p>
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs font-bold tracking-wide text-slate-400">
-            <span>PRODUCT THINKING</span>
-            <span>WEB PLATFORMS</span>
-            <span>MOBILE EXPERIENCES</span>
-            <span>BUSINESS SYSTEMS</span>
-            <span>AI & AUTOMATION</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[clamp(4rem,8vw,7rem)]">
+      <section className="py-16">
         <div className="mx-auto grid max-w-7xl gap-[clamp(2.5rem,5vw,4.5rem)] px-[clamp(1.25rem,4vw,3rem)] lg:grid-cols-[.85fr_1.15fr] lg:items-start">
           <Reveal>
             <SectionKicker>Who we are</SectionKicker>
@@ -366,12 +355,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f1f8fa] py-[clamp(4rem,8vw,7rem)]">
+      <section className="bg-[#f1f8fa] py-16">
         <div className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,3rem)]">
           <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
             <div>
               <SectionKicker>What we do</SectionKicker>
-              <h2 className="max-w-2xl text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] text-[#0a2540] ">
+              <h2 className="max-w-7xl text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] text-[#0a2540] ">
                 End-to-end capabilities for{" "}
                 <span className="text-[#087e8b]">what’s next.</span>
               </h2>
@@ -426,40 +415,53 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#071b31] py-[clamp(4rem,8vw,7rem)] text-white">
+      <section className="relative isolate overflow-hidden bg-[#071b31] py-16 text-white">
         <div className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,3rem)]">
-          <div className="grid gap-[clamp(2rem,4vw,3.5rem)] lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-            <div>
-              <SectionKicker light>Who we serve</SectionKicker>
-              <h2 className="text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] ">
-                Technology shaped around{" "}
-                <span className="text-teal-300">your world.</span>
-              </h2>
-            </div>
-            <p className="max-w-xl text-sm leading-7 text-white/55">
+          {/* Section heading */}
+          <div className="max-w-7xl">
+            <SectionKicker light>Who we serve</SectionKicker>
+
+            <h2 className="mt-4 text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em]">
+              Technology shaped around{" "}
+              <span className="text-teal-300">your world.</span>
+            </h2>
+
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/55">
               Every industry has its own language, constraints and
               opportunities. We bring adaptable engineering to the details that
               make your business different.
             </p>
           </div>
-          <div className="mt-[clamp(2rem,4vw,3.5rem)] grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 lg:grid-cols-5">
+
+          {/* Industry cards */}
+          <div className="mt-10 grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {industries.map((x, i) => {
               const Icon = industryIcons[i] || Boxes;
+
               return (
                 <Link
                   key={x.slug}
                   href={`/industries/${x.slug}`}
-                  className="group rounded-2xl border border-white/10 bg-white/[.035] p-[clamp(1rem,1.6vw,1.25rem)] transition hover:border-teal-400/40 hover:bg-white/[.075]"
+                  className="group flex min-h-[220px] flex-col rounded-2xl border border-white/10 bg-white/[.035] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:bg-white/[.075] hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)]"
                 >
-                  <Icon size={21} className="text-teal-300" />
-                  <h3 className="mt-7 text-sm font-bold text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-teal-300/15 bg-teal-300/10 transition-colors group-hover:bg-teal-300/20">
+                    <Icon size={21} className="text-teal-300" />
+                  </div>
+
+                  <h3 className="mt-6 text-sm font-bold text-white">
                     {x.title}
                   </h3>
-                  <p className="mt-2 text-xs leading-5 text-white/45">
+
+                  <p className="mt-2 flex-1 text-xs leading-6 text-white/50">
                     {x.description}
                   </p>
+
                   <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-bold text-teal-300">
-                    Explore <ArrowUpRight size={13} />
+                    Explore
+                    <ArrowUpRight
+                      size={13}
+                      className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                    />
                   </span>
                 </Link>
               );
@@ -468,12 +470,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-[clamp(4rem,8vw,7rem)]">
+      <section className="py-16">
         <div className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,3rem)]">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <SectionKicker>Solutions</SectionKicker>
-              <h2 className="max-w-2xl text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] text-[#0a2540] ">
+              <h2 className="max-w-7xl text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] text-[#0a2540] ">
                 Connected systems.{" "}
                 <span className="text-[#087e8b]">Clearer operations.</span>
               </h2>
@@ -519,58 +521,67 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f1f8fa] py-[clamp(4rem,8vw,7rem)]">
+      <section className="bg-[#f1f8fa] py-16">
         <div className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,3rem)]">
-          <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr]">
-            <div>
+          {/* Header */}
+          <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-7xl">
               <SectionKicker>Technology ecosystem</SectionKicker>
-              <h2 className="text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] text-[#0a2540] ">
+
+              <h2 className="mt-3 text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.08] tracking-[-.045em] text-[#0a2540]">
                 The right tools,{" "}
                 <span className="text-[#087e8b]">for the right reasons.</span>
               </h2>
-              <p className="mt-6 text-sm leading-7 text-slate-500">
+
+              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-500">
                 We choose technologies based on the product, your team and the
                 future you’re building toward—not trends alone.
               </p>
-              <Link
-                href="/technologies"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#087e8b]"
+            </div>
+
+            <Link
+              href="/technologies"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[#087e8b] transition-colors hover:text-[#0a2540]"
+            >
+              Explore our technology stack
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
+
+          {/* Technology cards: 3 columns × 2 rows */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {technologyGroups.map((g, i) => (
+              <div
+                key={g.category}
+                className="group rounded-2xl border border-slate-200/80 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#087e8b]/30 hover:shadow-[0_16px_40px_rgba(10,37,64,0.07)]"
               >
-                Explore our technology stack <ArrowUpRight size={16} />
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 gap-3 min-[520px]:grid-cols-2">
-              {technologyGroups.map((g, i) => (
-                <div
-                  key={g.category}
-                  className="rounded-2xl border border-slate-200 bg-white p-[clamp(1.1rem,2vw,1.5rem)]"
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-[#0a2540]">
-                      {g.category}
-                    </h3>
-                    <span className="text-[10px] font-bold text-[#087e8b]">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {g.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full bg-[#f1f8fa] px-3 py-2 text-[11px] font-medium text-slate-600"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-base font-bold text-[#0a2540]">
+                    {g.category}
+                  </h3>
+
+                  <span className="text-xs font-bold text-[#087e8b]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
-              ))}
-            </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {g.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-[#f1f8fa] px-3 py-2 text-xs font-medium text-slate-600 transition-colors group-hover:bg-[#e6f3f5]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-[clamp(4rem,8vw,7rem)]">
+      <section className="py-16">
         <div className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,3rem)]">
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
@@ -636,7 +647,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#071b31] py-[clamp(4rem,8vw,7rem)] text-white">
+      <section className="relative isolate overflow-hidden bg-[#071b31] py-16 text-white">
         <div className="mx-auto w-full max-w-7xl px-[clamp(1.25rem,4vw,3rem)]">
           <div className="grid gap-12 lg:grid-cols-[.78fr_1.22fr]">
             <div>
@@ -678,7 +689,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-[clamp(4rem,8vw,7rem)]">
+      <section className="py-16">
         <div className="mx-auto grid max-w-7xl gap-[clamp(2.5rem,5vw,4.5rem)] px-[clamp(1.25rem,4vw,3rem)] lg:grid-cols-[.75fr_1.25fr]">
           <div>
             <SectionKicker>Frequently asked</SectionKicker>
