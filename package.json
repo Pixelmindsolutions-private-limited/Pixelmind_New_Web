@@ -1,0 +1,27 @@
+{
+  "name": "pixelmind-solutions-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "framer-motion": "^11.18.2",
+    "gsap": "^3.12.7",
+    "lucide-react": "^0.468.0",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
